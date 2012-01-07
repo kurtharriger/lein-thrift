@@ -1,3 +1,5 @@
-(defproject lein-thrift "1.0.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :dependencies [[org.clojure/clojure "1.3.0"]])
+(defproject lein-thrift "0.1.0"
+  :description "Generate thrift sources"
+  :dependencies [[org.clojure/clojure "1.3.0"]
+                 [fs "1.0.0"]]
+  :eval-in-leinigen true)

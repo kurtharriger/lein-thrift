@@ -1,1 +1,0 @@
-(ns lein-thrift.core)

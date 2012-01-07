@@ -1,9 +1,9 @@
 (ns leiningen.hooks.thrift
   (:use [leiningen.thrift :only [thrift]])
   (:use [robert.hooke :only [add-hook]])
-  (:require [leiningen.javac]))
+  (:require [leiningen.compile]))
 
-(add-hook #'leiningen.javac/javac
+(add-hook #'leiningen.compile/compile
           (fn [f & args]
             (apply thrift args)
             (apply f args)))

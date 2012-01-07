@@ -13,4 +13,4 @@
         (doseq [src src-files]
           (sh "thrift" "-r" "--gen" "java:beans,hashcode" "-out" java-dir (str src-dir "/" src))
           (println (str "Generated source for " src)))
-        (javac project java-dir)))))
+        (javac (assoc project :java-source-path java-dir))))))

@@ -1,4 +1,4 @@
-(defproject lein-thrift "0.1.0"
+(defproject lein-thrift "0.1.1"
   :description "Generate thrift sources"
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [fs "1.0.0"]]

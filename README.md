@@ -24,6 +24,9 @@
       ;; source files will be placed here before javac is called
       :thrift-java-path "src/java"
 
+      ;; thrift generation configuration options (default "beans,hashcode")
+      :thrift-opts "beans,hashcode,nocamel"
+
       ;; add hook to enable sources to be regenerated before javac is called
       ;; or run manually with lein thift
       :hooks [leiningen.hooks.thrift]

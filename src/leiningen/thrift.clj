@@ -14,6 +14,10 @@
           (fs/delete java-dir))
         (fs/mkdir java-dir)
         (doseq [src src-files]
-          (sh "thrift" "-r" "--gen" (str "java:" opts) "-out" java-dir (str src-dir "/" src))
-          (println (str "Generated source for " src)))
+          (let [res (sh "thrift" "-r" "--gen" (str "java:" opts) "-out" java-dir (str src-dir "/" src))]
+            (if (zero? (:exit res))
+              (println (str "Generated source for " src))
+              (do 
+                (println (:err res))
+                (System/exit 0)))))
         (javac (assoc project :java-source-path java-dir))))))
